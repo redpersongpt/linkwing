@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IPv4 subnetting cheat sheet for the CCNA (/16 to /32)</title>
+<meta name="description" content="IPv4 subnetting cheat sheet: /16 to /32 masks, block sizes and hosts, the magic number method with worked examples, wildcard masks and VLSM.">
+<link rel="canonical" href="https://redpersongpt.github.io/linkwing/guides/subnetting-cheat-sheet.html">
+
+<meta name="theme-color" content="#1268F0">
+<meta name="apple-itunes-app" content="app-id=6817419175">
+<meta name="author" content="Ata Tunc Bilge">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Linkwing">
+<meta property="og:title" content="IPv4 subnetting cheat sheet for the CCNA (/16 to /32)">
+<meta property="og:description" content="IPv4 subnetting cheat sheet: /16 to /32 masks, block sizes and hosts, the magic number method with worked examples, wildcard masks and VLSM.">
+<meta property="og:url" content="https://redpersongpt.github.io/linkwing/guides/subnetting-cheat-sheet.html">
+<meta property="og:image" content="https://redpersongpt.github.io/linkwing/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Linkwing: learn networking from zero to CCNA exam prep">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IPv4 subnetting cheat sheet for the CCNA (/16 to /32)">
+<meta name="twitter:description" content="IPv4 subnetting cheat sheet: /16 to /32 masks, block sizes and hosts, the magic number method with worked examples, wildcard masks and VLSM.">
+<meta name="twitter:image" content="https://redpersongpt.github.io/linkwing/assets/og.jpg">
+<link rel="icon" type="image/png" href="../assets/favicon.png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/style.css">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Article",
+ "headline": "IPv4 subnetting cheat sheet for the CCNA",
+ "description": "IPv4 subnetting cheat sheet: /16 to /32 masks, block sizes and hosts, the magic number method with worked examples, wildcard masks and VLSM.",
+ "datePublished": "2026-10-01",
+ "dateModified": "2026-10-01",
+ "author": {
+  "@type": "Person",
+  "name": "Ata Tunc Bilge"
+ },
+ "publisher": {
+  "@type": "Person",
+  "name": "Ata Tunc Bilge"
+ },
+ "inLanguage": "en",
+ "mainEntityOfPage": "https://redpersongpt.github.io/linkwing/guides/subnetting-cheat-sheet.html",
+ "url": "https://redpersongpt.github.io/linkwing/guides/subnetting-cheat-sheet.html",
+ "image": "https://redpersongpt.github.io/linkwing/assets/og.jpg",
+ "about": {
+  "@type": "Thing",
+  "name": "CCNA 200-301 exam preparation"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Home",
+   "item": "https://redpersongpt.github.io/linkwing/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Guides",
+   "item": "https://redpersongpt.github.io/linkwing/guides/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 3,
+   "name": "Subnetting cheat sheet",
+   "item": "https://redpersongpt.github.io/linkwing/guides/subnetting-cheat-sheet.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hero slim">
+<div class="wrap topbar"><a class="brand" href="../"><img src="../assets/icon.png" width="512" height="512" alt="">Linkwing</a><nav class="nav" aria-label="Main"><a href="../">Home</a><a href="../guides/">Guides</a><details class="lang"><summary aria-label="Language">English</summary><ul><li><a href="../" hreflang="en" lang="en" aria-current="true">English</a></li><li><a href="../es/" hreflang="es" lang="es-MX">Español</a></li><li><a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><a href="../ja/" hreflang="ja" lang="ja">日本語</a></li><li><a href="../ko/" hreflang="ko" lang="ko">한국어</a></li><li><a href="../ar/" hreflang="ar" lang="ar">العربية</a></li><li><a href="../tr/" hreflang="tr" lang="tr">Türkçe</a></li><li><a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li></ul></details></nav></div>
+<div class="wrap hero-grid">
+<div>
+<nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="../">Home</a></li><li><a href="./">Guides</a></li><li aria-current="page">Subnetting cheat sheet</li></ol></nav>
+<h1>IPv4 subnetting cheat sheet for the CCNA</h1>
+
+</div>
+</div>
+</header>
+<main id="main">
+<article class="guide"><div class="wrap narrow"><p class="meta">By Ata Tunc Bilge · Published <time datetime="2026-10-01">1 October 2026</time></p><p>Everything you need to subnet IPv4 addresses for the CCNA 200-301 exam, on one page: mask tables from /16 to /32, the magic number method with three worked examples, wildcard masks, a VLSM example and the reference ranges worth memorizing. Every number on this page was checked with a script.</p><h2 id="the-formulas">The formulas</h2><ul><li>An IPv4 address has 32 bits. The prefix length /n is the number of network bits; the remaining h = 32 − n bits are host bits.</li><li>Usable hosts per subnet = 2<sup>h</sup> − 2, because the first address is the network address and the last is the broadcast address. The exceptions are /31 and /32 (see the table).</li><li>Subnets created by borrowing s bits = 2<sup>s</sup>. For example, splitting a /24 into /27s borrows 3 bits and gives 8 subnets.</li><li>Block size, or magic number = 256 − the mask value in the interesting octet.</li></ul><h2 id="mask-table-24-to-32">Mask table: /24 to /32</h2><div class="table-wrap"><table><caption>Prefixes in the fourth octet</caption><thead><tr><th scope="col">Prefix</th><th scope="col">Subnet mask</th><th scope="col">Wildcard</th><th scope="col" class="num">Block size</th><th scope="col" class="num">Addresses</th><th scope="col" class="num">Usable hosts</th></tr></thead><tbody><tr><th scope="row">/24</th><td>255.255.255.0</td><td>0.0.0.255</td><td class="num">256</td><td class="num">256</td><td class="num">254</td></tr><tr><th scope="row">/25</th><td>255.255.255.128</td><td>0.0.0.127</td><td class="num">128</td><td class="num">128</td><td class="num">126</td></tr><tr><th scope="row">/26</th><td>255.255.255.192</td><td>0.0.0.63</td><td class="num">64</td><td class="num">64</td><td class="num">62</td></tr><tr><th scope="row">/27</th><td>255.255.255.224</td><td>0.0.0.31</td><td class="num">32</td><td class="num">32</td><td class="num">30</td></tr><tr><th scope="row">/28</th><td>255.255.255.240</td><td>0.0.0.15</td><td class="num">16</td><td class="num">16</td><td class="num">14</td></tr><tr><th scope="row">/29</th><td>255.255.255.248</td><td>0.0.0.7</td><td class="num">8</td><td class="num">8</td><td class="num">6</td></tr><tr><th scope="row">/30</th><td>255.255.255.252</td><td>0.0.0.3</td><td class="num">4</td><td class="num">4</td><td class="num">2</td></tr><tr><th scope="row">/31</th><td>255.255.255.254</td><td>0.0.0.1</td><td class="num">2</td><td class="num">2</td><td class="num">2 (point-to-point, RFC 3021)</td></tr><tr><th scope="row">/32</th><td>255.255.255.255</td><td>0.0.0.0</td><td class="num">1</td><td class="num">1</td><td class="num">1 (host route)</td></tr></tbody></table></div><ul><li><strong>/31</strong>: no network or broadcast address. Both addresses are usable on point-to-point links, as defined in RFC 3021, which saves addresses on router-to-router links.</li><li><strong>/32</strong>: a single address. Used for host routes and for loopback interfaces.</li></ul><h2 id="mask-table-16-to-23">Mask table: /16 to /23</h2><div class="table-wrap"><table><caption>Prefixes in the third octet (block size counts in the third octet)</caption><thead><tr><th scope="col">Prefix</th><th scope="col">Subnet mask</th><th scope="col">Wildcard</th><th scope="col" class="num">Block size</th><th scope="col" class="num">Addresses</th><th scope="col" class="num">Usable hosts</th></tr></thead><tbody><tr><th scope="row">/16</th><td>255.255.0.0</td><td>0.0.255.255</td><td class="num">256</td><td class="num">65,536</td><td class="num">65,534</td></tr><tr><th scope="row">/17</th><td>255.255.128.0</td><td>0.0.127.255</td><td class="num">128</td><td class="num">32,768</td><td class="num">32,766</td></tr><tr><th scope="row">/18</th><td>255.255.192.0</td><td>0.0.63.255</td><td class="num">64</td><td class="num">16,384</td><td class="num">16,382</td></tr><tr><th scope="row">/19</th><td>255.255.224.0</td><td>0.0.31.255</td><td class="num">32</td><td class="num">8,192</td><td class="num">8,190</td></tr><tr><th scope="row">/20</th><td>255.255.240.0</td><td>0.0.15.255</td><td class="num">16</td><td class="num">4,096</td><td class="num">4,094</td></tr><tr><th scope="row">/21</th><td>255.255.248.0</td><td>0.0.7.255</td><td class="num">8</td><td class="num">2,048</td><td class="num">2,046</td></tr><tr><th scope="row">/22</th><td>255.255.252.0</td><td>0.0.3.255</td><td class="num">4</td><td class="num">1,024</td><td class="num">1,022</td></tr><tr><th scope="row">/23</th><td>255.255.254.0</td><td>0.0.1.255</td><td class="num">2</td><td class="num">512</td><td class="num">510</td></tr></tbody></table></div><h2 id="the-one-row-to-memorize">The one row to memorize</h2><p>Every mask octet is one of these values. The block size is 256 minus the mask value.</p><div class="table-wrap"><table><caption>Mask octet values by number of 1 bits</caption><thead><tr><th scope="col">1 bits in the octet</th><th scope="col" class="num">1</th><th scope="col" class="num">2</th><th scope="col" class="num">3</th><th scope="col" class="num">4</th><th scope="col" class="num">5</th><th scope="col" class="num">6</th><th scope="col" class="num">7</th><th scope="col" class="num">8</th></tr></thead><tbody><tr><th scope="row">Mask value</th><td class="num">128</td><td class="num">192</td><td class="num">224</td><td class="num">240</td><td class="num">248</td><td class="num">252</td><td class="num">254</td><td class="num">255</td></tr><tr><th scope="row">Block size</th><td class="num">128</td><td class="num">64</td><td class="num">32</td><td class="num">16</td><td class="num">8</td><td class="num">4</td><td class="num">2</td><td class="num">1</td></tr></tbody></table></div><h2 id="the-magic-number-method">The magic number method</h2><ol><li>Find the <strong>interesting octet</strong>: the octet where the mask is neither 255 nor 0.</li><li><strong>Magic number</strong> (block size) = 256 − the mask value in that octet.</li><li><strong>Network address</strong>: in the interesting octet, take the largest multiple of the magic number that is less than or equal to the address's value. Set every octet to the right to 0.</li><li><strong>Next network</strong>: network value + magic number in the interesting octet. The <strong>broadcast address</strong> is one less than the next network (octets to the right become 255).</li><li><strong>First host</strong> = network + 1. <strong>Last host</strong> = broadcast − 1.</li><li><strong>Usable hosts</strong> = 2<sup>h</sup> − 2.</li></ol><h3>Worked example 1: 10.226.222.134/23</h3><p>/23 means 23 network bits and 9 host bits. The mask is 255.255.254.0, so the interesting octet is the third one, with a mask value of 254.</p><ol><li>Magic number: 256 − 254 = <strong>2</strong>, counted in the third octet.</li><li>Network: the largest multiple of 2 that is less than or equal to 222 is 222, so the network is <strong>10.226.222.0</strong>.</li><li>Next network: 222 + 2 = 224, so 10.226.224.0. The broadcast is one address less: <strong>10.226.223.255</strong>.</li><li>First usable host: <strong>10.226.222.1</strong>. Last usable host: <strong>10.226.223.254</strong>.</li><li>Usable hosts: 2<sup>9</sup> − 2 = <strong>510</strong>.</li></ol><p>This subnet spans two values of the third octet (222 and 223), so addresses such as 10.226.222.255 and 10.226.223.0 are ordinary host addresses inside it.</p><h3>Worked example 2: 172.16.45.77/27</h3><ol><li>/27 gives a mask of 255.255.255.224. The interesting octet is the fourth (224); magic number 256 − 224 = <strong>32</strong>.</li><li>Multiples of 32: 0, 32, 64, 96 … 64 ≤ 77 &lt; 96, so the network is <strong>172.16.45.64</strong>.</li><li>Next network: 172.16.45.96, so the broadcast is <strong>172.16.45.95</strong>.</li><li>First usable host: <strong>172.16.45.65</strong>. Last usable host: <strong>172.16.45.94</strong>.</li><li>Usable hosts: 2<sup>5</sup> − 2 = <strong>30</strong>.</li></ol><h3>Worked example 3: 172.20.99.10/20</h3><ol><li>/20 gives a mask of 255.255.240.0. The interesting octet is the third (240); magic number 256 − 240 = <strong>16</strong>.</li><li>Multiples of 16: … 80, 96, 112. 96 ≤ 99 &lt; 112, so the network is <strong>172.20.96.0</strong>.</li><li>Next network: 172.20.112.0, so the broadcast is <strong>172.20.111.255</strong>.</li><li>First usable host: <strong>172.20.96.1</strong>. Last usable host: <strong>172.20.111.254</strong>.</li><li>Usable hosts: 2<sup>12</sup> − 2 = <strong>4,094</strong>.</li></ol><h2 id="wildcard-masks">Wildcard masks</h2><p>A wildcard mask is the inverse of a subnet mask: subtract each octet of the mask from 255. In a wildcard, a 0 bit means the address bit must match and a 1 bit means it is ignored. Cisco IOS uses wildcard masks in ACLs and in OSPF <code>network</code> statements.</p><div class="table-wrap"><table><caption>Common wildcard masks</caption><thead><tr><th scope="col">Subnet mask</th><th scope="col">Wildcard mask</th><th scope="col">Matches</th></tr></thead><tbody><tr><th scope="row">255.255.255.255</th><td>0.0.0.0</td><td>One host (IOS keyword <code>host</code>)</td></tr><tr><th scope="row">255.255.255.252</th><td>0.0.0.3</td><td>A /30 (4 addresses)</td></tr><tr><th scope="row">255.255.255.192</th><td>0.0.0.63</td><td>A /26 (64 addresses)</td></tr><tr><th scope="row">255.255.255.0</th><td>0.0.0.255</td><td>A /24 (256 addresses)</td></tr><tr><th scope="row">255.255.0.0</th><td>0.0.255.255</td><td>A /16</td></tr><tr><th scope="row">0.0.0.0</th><td>255.255.255.255</td><td>Any address (IOS keyword <code>any</code>)</td></tr></tbody></table></div><pre><code>! Match 192.168.10.64 to 192.168.10.127 (192.168.10.64/26)
+access-list 10 permit 192.168.10.64 0.0.0.63
+
+! Enable OSPF area 0 on interfaces in 10.1.1.0/24
+router ospf 1
+ network 10.1.1.0 0.0.0.255 area 0</code></pre><p>Use the network address of the range in the statement. With <code>0.0.0.63</code> the last six bits are ignored, so 192.168.10.64 through 192.168.10.127 match.</p><h2 id="vlsm-example">VLSM example</h2><p>VLSM (variable length subnet masking) means using different prefix lengths inside one block, so that each subnet is only as large as it needs to be. Allocate the largest subnets first so that each one starts on a boundary of its own block size.</p><p>Task: split 192.168.10.0/24 for LAN A (100 hosts), LAN B (50 hosts), LAN C (20 hosts) and two point-to-point WAN links.</p><div class="table-wrap"><table><caption>VLSM plan for 192.168.10.0/24</caption><thead><tr><th scope="col">Segment</th><th scope="col" class="num">Hosts needed</th><th scope="col">Prefix (usable)</th><th scope="col">Subnet</th><th scope="col">Usable range</th><th scope="col">Broadcast</th></tr></thead><tbody><tr><th scope="row">LAN A</th><td class="num">100</td><td>/25 (126)</td><td>192.168.10.0/25</td><td>192.168.10.1 – 192.168.10.126</td><td>192.168.10.127</td></tr><tr><th scope="row">LAN B</th><td class="num">50</td><td>/26 (62)</td><td>192.168.10.128/26</td><td>192.168.10.129 – 192.168.10.190</td><td>192.168.10.191</td></tr><tr><th scope="row">LAN C</th><td class="num">20</td><td>/27 (30)</td><td>192.168.10.192/27</td><td>192.168.10.193 – 192.168.10.222</td><td>192.168.10.223</td></tr><tr><th scope="row">WAN 1</th><td class="num">2</td><td>/30 (2)</td><td>192.168.10.224/30</td><td>192.168.10.225 – 192.168.10.226</td><td>192.168.10.227</td></tr><tr><th scope="row">WAN 2</th><td class="num">2</td><td>/30 (2)</td><td>192.168.10.228/30</td><td>192.168.10.229 – 192.168.10.230</td><td>192.168.10.231</td></tr></tbody></table></div><p>Still free for growth: 192.168.10.232/29 (.232 to .239) and 192.168.10.240/28 (.240 to .255). If both routers support it, a /31 on each WAN link (RFC 3021) uses 2 addresses instead of 4.</p><h2 id="reference-ranges">Reference ranges</h2><div class="table-wrap"><table><caption>IPv4 ranges worth memorizing</caption><thead><tr><th scope="col">Range</th><th scope="col">Purpose</th></tr></thead><tbody><tr><th scope="row">10.0.0.0/8</th><td>Private (RFC 1918)</td></tr><tr><th scope="row">172.16.0.0/12 (172.16.0.0 – 172.31.255.255)</th><td>Private (RFC 1918)</td></tr><tr><th scope="row">192.168.0.0/16</th><td>Private (RFC 1918)</td></tr><tr><th scope="row">127.0.0.0/8</th><td>Loopback</td></tr><tr><th scope="row">169.254.0.0/16</th><td>Link-local (APIPA), self-assigned when DHCP fails</td></tr><tr><th scope="row">224.0.0.0/4 (224 – 239 in the first octet)</th><td>Multicast (former class D)</td></tr></tbody></table></div><div class="table-wrap"><table><caption>Classful ranges (first octet)</caption><thead><tr><th scope="col">Class</th><th scope="col">First octet</th><th scope="col">Default mask</th></tr></thead><tbody><tr><th scope="row">A</th><td>1 – 126 (0 and 127 are reserved)</td><td>255.0.0.0 (/8)</td></tr><tr><th scope="row">B</th><td>128 – 191</td><td>255.255.0.0 (/16)</td></tr><tr><th scope="row">C</th><td>192 – 223</td><td>255.255.255.0 (/24)</td></tr><tr><th scope="row">D</th><td>224 – 239</td><td>Multicast, no mask</td></tr><tr><th scope="row">E</th><td>240 – 255</td><td>Reserved</td></tr></tbody></table></div><h2 id="common-mistakes">Common mistakes</h2><ul><li>Forgetting the − 2: a /26 has 64 addresses but 62 usable hosts.</li><li>Stepping by the mask value instead of the block size: the /27 mask octet is 224, but /27 subnets step by 32.</li><li>Looking in the wrong octet: from /17 to /23 the interesting octet is the third, so the fourth octet runs through 0 to 255 inside one subnet.</li><li>Treating a /31 like a /30: on point-to-point links a /31 has two usable addresses and no broadcast.</li><li>Writing an ACL or OSPF statement with a host address and a wildcard that does not match the range you meant.</li></ul><h2 id="practice">Practice</h2><p>Speed comes from repetition. Do a few problems at a time, several days a week, and check each answer with the method above. Linkwing's Subnetting Gym generates unlimited drills on iPhone and works offline. For where subnetting fits into a full schedule, see the <a href="ccna-study-plan.html">CCNA study plan</a>.</p></div></article>
+<section class="soft cta-band"><div class="wrap"><h2>Practice on your iPhone with Linkwing</h2>
+<p>Lessons from zero, 75 IOS command labs, a Subnetting Gym and timed mock exams. Free to download · iPhone · iOS 26 or later.</p>
+<a class="cta" href="https://apps.apple.com/app/id6817419175" rel="noopener"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m6 11 6 6 6-6"/><path d="M5 21h14"/></svg>Download on the App Store</a></div></section>
+</main>
+<footer class="site"><div class="wrap"><ul class="cols"><li><a href="https://apps.apple.com/app/id6817419175" rel="noopener">App Store</a></li><li><a href="../guides/">Guides</a></li><li><a href="https://185-48-182-164.sslip.io/linkwing/privacy" rel="noopener">Privacy</a></li><li><a href="https://185-48-182-164.sslip.io/linkwing/terms" rel="noopener">Terms</a></li><li><a href="https://185-48-182-164.sslip.io/linkwing/support" rel="noopener">Support</a></li></ul><p class="disclaimer">Linkwing is an independent study app and is not affiliated with, endorsed by or sponsored by Cisco Systems, Inc. CCNA and Cisco are trademarks of Cisco Systems, Inc. All questions are original; Linkwing does not use real exam questions.</p><p class="muted"><a href="../" hreflang="en" lang="en">English</a> · <a href="../es/" hreflang="es" lang="es-MX">Español</a> · <a href="../pt-br/" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a> · <a href="../ja/" hreflang="ja" lang="ja">日本語</a> · <a href="../ko/" hreflang="ko" lang="ko">한국어</a> · <a href="../ar/" hreflang="ar" lang="ar">العربية</a> · <a href="../tr/" hreflang="tr" lang="tr">Türkçe</a> · <a href="../zh-hans/" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></p><p class="muted">© 2026 Ata Tunc Bilge</p></div></footer>
+</body>
+</html>

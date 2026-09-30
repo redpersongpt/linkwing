@@ -1,0 +1,33 @@
+# Linkwing
+
+> Linkwing (App Store name: "Linkwing: Learn Networking") is an iPhone app that teaches computer networking from zero and prepares you for the Cisco CCNA 200-301 exam (v1.1 and v2.0). It is free to download with an optional Linkwing Pro subscription, works offline, needs no account, and its interface and 17 beginner lessons are in 8 languages (exam-style questions and IOS labs are in English). It is an independent study app, not affiliated with Cisco.
+
+Key facts: iPhone, iOS 26 or later; category Education; developer Ata Tunc Bilge; mascot Kavi, a blue cockatiel. Content: 17 beginner lessons in 2 Start Here worlds, 15 exam worlds on an illustrated map, 1,136 original exam-style questions, 929 flashcards, 75 IOS command labs, unlimited Subnetting Gym drills, timed mock exams of 20, 50 and 100 questions. A predicted score out of 1000 appears only after 40 first-try answers. Questions are original, never exam dumps. App Store: https://apps.apple.com/app/id6817419175
+
+## Main pages
+
+- [Linkwing home (English)](https://redpersongpt.github.io/linkwing/): what Linkwing is, who it is for, how it works, CCNA v1.1 vs v2.0, FAQ
+- [Full text for LLMs](https://redpersongpt.github.io/linkwing/llms-full.txt): the English home page, FAQ and key facts as plain markdown
+
+## Guides
+
+- [A week-by-week CCNA study plan for complete beginners](https://redpersongpt.github.io/linkwing/guides/ccna-study-plan.html): A realistic CCNA 200-301 study plan for beginners at 20, 30 or 45 minutes a day: about 72 hours, mapped week by week to the v1.1 domains.
+- [CCNA 200-301 v1.1 vs v2.0: what changes on 3 February 2027](https://redpersongpt.github.io/linkwing/guides/ccna-v1-1-vs-v2-0.html): CCNA 200-301 v1.1 vs v2.0: the switch date, domain weights side by side, topic changes and how to pick a version from your exam date.
+- [IPv4 subnetting cheat sheet for the CCNA](https://redpersongpt.github.io/linkwing/guides/subnetting-cheat-sheet.html): IPv4 subnetting cheat sheet: /16 to /32 masks, block sizes and hosts, the magic number method with worked examples, wildcard masks and VLSM.
+
+## Localized pages
+
+- [Español: Linkwing: Redes desde cero](https://redpersongpt.github.io/linkwing/es/): Prepara el examen CCNA 200-301
+- [Português (Brasil): Linkwing: Redes do Zero](https://redpersongpt.github.io/linkwing/pt-br/): Preparação para o CCNA 200-301
+- [日本語: Linkwing：ゼロから学ぶネットワーク](https://redpersongpt.github.io/linkwing/ja/): 入門からCCNA 200-301対策まで
+- [한국어: Linkwing: 네트워크 기초 학습](https://redpersongpt.github.io/linkwing/ko/): 처음부터 CCNA 200-301 시험 대비
+- [العربية: Linkwing: تعلم الشبكات](https://redpersongpt.github.io/linkwing/ar/): ابدأ من الصفر وحضّر لـ CCNA
+- [Türkçe: Linkwing: Sıfırdan Ağ Öğren](https://redpersongpt.github.io/linkwing/tr/): CCNA 200-301 sınav hazırlığı
+- [简体中文: Linkwing：零基础学网络](https://redpersongpt.github.io/linkwing/zh-hans/): 子网划分·CCNA 200-301备考
+
+## Optional
+
+- [App Store listing](https://apps.apple.com/app/id6817419175): download Linkwing for iPhone
+- [Privacy policy](https://185-48-182-164.sslip.io/linkwing/privacy): how Linkwing handles data
+- [Terms of use](https://185-48-182-164.sslip.io/linkwing/terms): terms for the app and the Linkwing Pro subscription
+- [Support](https://185-48-182-164.sslip.io/linkwing/support): contact and help
