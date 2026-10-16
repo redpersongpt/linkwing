@@ -182,9 +182,9 @@ No. Linkwing is an independent study app and is not affiliated with, endorsed by
 ## Links
 
 - App Store: https://apps.apple.com/app/id6817419175
-- Privacy policy: https://185-48-182-164.sslip.io/linkwing/privacy
-- Terms of use: https://185-48-182-164.sslip.io/linkwing/terms
-- Support: https://185-48-182-164.sslip.io/linkwing/support
+- Privacy policy: https://redpersongpt.github.io/linkwing/privacy/
+- Terms of use: https://redpersongpt.github.io/linkwing/terms/
+- Support: https://redpersongpt.github.io/linkwing/support/
 
 ## Other languages
 

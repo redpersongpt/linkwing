@@ -28,6 +28,6 @@ Key facts: iPhone, iOS 26 or later; category Education; developer Ata Tunc Bilge
 ## Optional
 
 - [App Store listing](https://apps.apple.com/app/id6817419175): download Linkwing for iPhone
-- [Privacy policy](https://185-48-182-164.sslip.io/linkwing/privacy): how Linkwing handles data
-- [Terms of use](https://185-48-182-164.sslip.io/linkwing/terms): terms for the app and the Linkwing Pro subscription
-- [Support](https://185-48-182-164.sslip.io/linkwing/support): contact and help
+- [Privacy policy](https://redpersongpt.github.io/linkwing/privacy/): how Linkwing handles data
+- [Terms of use](https://redpersongpt.github.io/linkwing/terms/): terms for the app and the Linkwing Pro subscription
+- [Support](https://redpersongpt.github.io/linkwing/support/): contact and help

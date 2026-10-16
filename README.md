@@ -48,9 +48,9 @@
 
 ## Links
 
-- [Privacy policy](https://185-48-182-164.sslip.io/linkwing/privacy)
-- [Terms of use](https://185-48-182-164.sslip.io/linkwing/terms)
-- [Support](https://185-48-182-164.sslip.io/linkwing/support)
+- [Privacy policy](https://redpersongpt.github.io/linkwing/privacy/)
+- [Terms of use](https://redpersongpt.github.io/linkwing/terms/)
+- [Support](https://redpersongpt.github.io/linkwing/support/)
 
 ## Disclaimer
 
